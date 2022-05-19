@@ -1,0 +1,26 @@
+.Sidebar-container{
+    background-color: #000000de;
+    position: fixed;
+    width: 220px;
+    height: 100vh;
+}
+
+.sidebar-links{
+    padding:16px 20px;
+    font:16px Roboto;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    
+}
+.sidebar-icons{
+    padding-right:20px ;
+    height: 30px;
+    width: 20px;
+}
+
+.sidebar-links:hover{
+    background-color: #536075;
+}
