@@ -6,11 +6,11 @@ const VideoFromServer = createContext(null);
 const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(videoReducer, {
     videodata: [],
-    watchLater:[],
-    LikeList:[],
-    currentVideo:null,
-    History:[]
-   });
+    watchLater: [],
+    LikeList: [],
+    currentVideo: null,
+    History: [],
+  });
 
   return (
     <VideoFromServer.Provider value={{ videoState, videoDispatch }}>
@@ -19,6 +19,6 @@ const VideoProvider = ({ children }) => {
   );
 };
 
-const useVideo= () => useContext(VideoFromServer);
+const useVideo = () => useContext(VideoFromServer);
 
 export { useVideo, VideoProvider };

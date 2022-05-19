@@ -4,7 +4,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import "./Videocard.css";
 
 function Videocard({ item }) {
-  const { creatorsLogo, creator, description, views, thumbnailImg, _id } =
+  const { creatorsLogo, creator, description, views, thumbnailImg, time } =
     item.item;
 
   return (
@@ -15,7 +15,9 @@ function Videocard({ item }) {
         <div>
           <h3 className="video-title">{description}</h3>
           <p>{creator}</p>
-          <p>{views} views</p>
+          <p>
+            {views} views . {time} ago
+          </p>
         </div>
         <div>
           <FaThumbsUp className="options" />

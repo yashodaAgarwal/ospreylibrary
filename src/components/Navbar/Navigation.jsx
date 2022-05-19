@@ -1,18 +1,31 @@
-import { Link } from "react-router-dom"
-import "./Navigation.css"
-const Navbar = () =>{
-    return (
-        <nav className="nav">
-            <div className="logo">
-            <img className="logo-image" src="https://cdn-icons-png.flaticon.com/512/48/48968.png" alt="logo" height="30px" width="30px"/>
-            <h1 className="logo-text">YasTube</h1>
-            </div>
-            <div className="auth">
-            <button className="auth-btn">SignUp</button>
-            <button className="auth-btn">Login</button>
-            </div>
-        </nav>
-    )
-}
+import { MdNightlightRound, MdWbSunny } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { useTheme } from "../../context";
+import "./Navigation.css";
 
-export { Navbar}
+const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+  return (
+    <nav className="nav">
+      <Link to="/">
+        <div className="logo">
+          <h1 className="logo-text">YasTube</h1>
+        </div>
+      </Link>
+      <div className="auth">
+        <button className="auth-btn">SignUp</button>
+        <button className="auth-btn">Login</button>
+        {theme === "dark" ? (
+          <MdWbSunny onClick={() => setTheme("light")} className="theme-icon" />
+        ) : (
+          <MdNightlightRound
+            onClick={() => setTheme("dark")}
+            className="theme-icon"
+          />
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

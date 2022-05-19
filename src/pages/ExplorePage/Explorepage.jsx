@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { CategoryList, Navbar, Sidebar, Videocard } from "../../components";
-import { useFilter, useVideo } from "../../context";
+import { useFilter, useTheme, useVideo } from "../../context";
 import "./Explorepage.css";
 
 function Explorepage() {
+  const { theme } = useTheme();
   const {
     videoState: { videodata },
     videoDispatch,
@@ -39,12 +40,19 @@ function Explorepage() {
       <Navbar />
       <div className="home-container">
         <Sidebar />
-        <div className="home-wrapper">
+        <div
+          className={theme === "light" ? "home-wrapper" : "home-wrapper dark"}
+        >
           <CategoryList />
-          <div className="video-list">
+          <div className="video-list ">
             {filteredVideo().map((item) => {
               return (
-                <div className="video-card" key={item.id}>
+                <div
+                  className={
+                    theme === "light" ? "video-card" : "video-card dark"
+                  }
+                  key={item.id}
+                >
                   <Videocard item={{ item }} />
                 </div>
               );

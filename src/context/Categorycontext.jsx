@@ -1,15 +1,11 @@
-import {
-  createContext,
-  useContext,
-  useReducer,
-} from "react";
+import { createContext, useContext, useReducer } from "react";
 import serverReducer from "../reducer/categoryReducer";
 
 const DataFromServer = createContext(null);
 
 const ServerProvider = ({ children }) => {
   const [state, dispatch] = useReducer(serverReducer, {
-    categorydata: []
+    categorydata: [],
   });
   return (
     <DataFromServer.Provider value={{ state, dispatch }}>

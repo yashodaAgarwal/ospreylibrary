@@ -1,4 +1,4 @@
-import { useFilter, useServer } from "../../context";
+import { useFilter, useServer, useTheme } from "../../context";
 import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
 import axios from "axios";
@@ -6,6 +6,7 @@ import axios from "axios";
 function CategoryList() {
   const { state, dispatch } = useServer();
   const { FilterDispatch } = useFilter();
+  const { theme } = useTheme();
   useEffect(() => {
     (async () => {
       try {
@@ -21,7 +22,7 @@ function CategoryList() {
     })();
   }, [dispatch]);
   return (
-    <div className="categoryName">
+    <div className={theme === "light" ? "categoryName" : "categoryName dark"}>
       <Link
         to="/videos"
         onClick={() => FilterDispatch({ type: "Clear_Filter" })}
@@ -36,7 +37,9 @@ function CategoryList() {
               FilterDispatch({ type: "CATEGORY", payload: item.category })
             }
           >
-            <div className="itemName" key={item._id}>{item.category}</div>
+            <div className="itemName" key={item._id}>
+              {item.category}
+            </div>
           </Link>
         );
       })}

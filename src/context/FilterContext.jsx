@@ -5,7 +5,7 @@ const FilterContext = createContext();
 
 const FilterProvider = ({ children }) => {
   const [FilterState, FilterDispatch] = useReducer(FilterReducer, {
-    byCategory: []
+    byCategory: [],
   });
   return (
     <FilterContext.Provider value={{ FilterState, FilterDispatch }}>

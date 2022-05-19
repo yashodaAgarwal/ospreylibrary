@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import {
   FilterProvider,
   ServerProvider,
+  ThemeProvider,
   VideoProvider,
 } from "./context";
 // Call make Server
@@ -16,6 +17,7 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <ThemeProvider>
         <VideoProvider>
           <FilterProvider>
             <ServerProvider>
@@ -23,7 +25,7 @@ ReactDOM.render(
             </ServerProvider>
           </FilterProvider>
         </VideoProvider>
-
+      </ThemeProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
