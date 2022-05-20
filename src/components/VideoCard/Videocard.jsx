@@ -1,10 +1,20 @@
 import React from "react";
-import { MdPlaylistPlay, MdWatchLater } from "react-icons/md";
-import { FaThumbsUp } from "react-icons/fa";
-import "./Videocard.css";
+import { MdPlaylistPlay, MdWatchLater, MdUnpublished } from "react-icons/md";
+import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa";
+import { AddtoLikeList, RemovetoLikeList } from "../../utils/LikeHelper";
+import {
+  Addtowatchlater,
+  Removetowatchlater,
+} from "../../utils/WatchLaterHelper";
+import { useVideo } from "../../context";
+import "./Videocard.css"
 
 function Videocard({ item }) {
-  const { creatorsLogo, creator, description, views, thumbnailImg, time } =
+  const {
+    videoState: { watchLater, LikeList},
+    videoDispatch,
+  } = useVideo();
+  const { creatorsLogo, creator, description, views, thumbnailImg,_id, time } =
     item.item;
 
   return (
@@ -20,11 +30,34 @@ function Videocard({ item }) {
           </p>
         </div>
         <div>
-          <FaThumbsUp className="options" />
+          <div>
+            {LikeList.some((video) => video._id === _id) ? (
+              <FaThumbsUp
+                className="options"
+                onClick={() => RemovetoLikeList(item.item, videoDispatch)}
+              />
+            ) : (
+              <FaRegThumbsUp
+                className="options"
+                onClick={() => AddtoLikeList(item.item, videoDispatch)}
+              />
+            )}
+          </div>
 
           <MdPlaylistPlay className="options" />
-
-          <MdWatchLater className="options" />
+          <div>
+            {watchLater.some((video) => video._id === _id) ? (
+              <MdUnpublished
+                className="options"
+                onClick={() => Removetowatchlater(item.item, videoDispatch)}
+              />
+            ) : (
+              <MdWatchLater
+                className="options"
+                onClick={() => Addtowatchlater(item.item, videoDispatch)}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
