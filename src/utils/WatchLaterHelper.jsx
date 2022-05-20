@@ -5,11 +5,11 @@ export const Addtowatchlater = async (video, videoDispatch) => {
     const response = await axios.post(
       "/api/user/watchlater",
       { video },
-      // {
-      //   headers: {
-      //     authorization: localStorage.getItem("token"),
-      //   },
-      // }
+      {
+        headers: {
+        authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YmM4MzRhYS1kYzJhLTRiMjUtOWU3Ny00Y2RlMWJmNWNiZWIiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.jNVFef-QeoOawgYBqFjADppRxHPAOpWV_-WuzLQA0bs",
+        },
+      }
     );
     console.log(response.data.watchlater);
     if (response.status === 201) {
@@ -24,12 +24,12 @@ export const Addtowatchlater = async (video, videoDispatch) => {
 };
 export const Removetowatchlater = async (video, videoDispatch) => {
   try {
-    const response = await axios.delete(`/api/user/watchlater/${video._id}`, 
-    // {
-    //   headers: {
-    //     authorization: localStorage.getItem("token"),
-    //   },
-    // }
+    const response = await axios.delete(`/api/user/watchlater/${video._id}`,
+    {
+      headers: {
+        authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YmM4MzRhYS1kYzJhLTRiMjUtOWU3Ny00Y2RlMWJmNWNiZWIiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.jNVFef-QeoOawgYBqFjADppRxHPAOpWV_-WuzLQA0bs",
+      },
+    }
     );
     console.log(response);
     if (response.status === 200) {
