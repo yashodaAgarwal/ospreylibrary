@@ -5,11 +5,11 @@ export const Addtowatchlater = async (video, videoDispatch) => {
     const response = await axios.post(
       "/api/user/watchlater",
       { video },
-      {
-        headers: {
-          authorization: localStorage.getItem("token"),
-        },
-      }
+      // {
+      //   headers: {
+      //     authorization: localStorage.getItem("token"),
+      //   },
+      // }
     );
     console.log(response.data.watchlater);
     if (response.status === 201) {
@@ -24,11 +24,13 @@ export const Addtowatchlater = async (video, videoDispatch) => {
 };
 export const Removetowatchlater = async (video, videoDispatch) => {
   try {
-    const response = await axios.delete(`/api/user/watchlater/${video._id}`, {
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-    });
+    const response = await axios.delete(`/api/user/watchlater/${video._id}`, 
+    // {
+    //   headers: {
+    //     authorization: localStorage.getItem("token"),
+    //   },
+    // }
+    );
     console.log(response);
     if (response.status === 200) {
       videoDispatch({

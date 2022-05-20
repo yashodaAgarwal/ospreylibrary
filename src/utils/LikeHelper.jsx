@@ -5,12 +5,13 @@ export const AddtoLikeList = async (video, videoDispatch) => {
     const response = await axios.post(
       "/api/user/likes",
       { video },
-      {
-        headers: {
-          authorization: localStorage.getItem("token"),
-        },
-      }
+      // {
+      //   headers: {
+      //     authorization: localStorage.getItem("token"),
+      //   },
+      // }
     );
+    console.log(response)
     if (response.status === 201) {
       videoDispatch({
         type: "ADD_TO_LikeList",
@@ -26,11 +27,11 @@ export const RemovetoLikeList = async (video, videoDispatch) => {
     try {
       const response = await axios.delete(
         `/api/user/likes/${video._id}`,
-        {
-          headers: {
-            authorization: localStorage.getItem("token"),
-          },
-        }
+        // {
+        //   headers: {
+        //     authorization: localStorage.getItem("token"),
+        //   },
+        // }
       );
       if (response.status === 200) {
         videoDispatch({
