@@ -1,0 +1,5 @@
+.SingleVideo{
+    display:flex;
+    justify-content: space-between;
+    width:36rem;
+}

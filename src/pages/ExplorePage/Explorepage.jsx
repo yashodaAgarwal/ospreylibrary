@@ -51,7 +51,7 @@ function Explorepage() {
                   className={
                     theme === "light" ? "video-card" : "video-card dark"
                   }
-                  key={item.id}
+                  key={item.id} 
                 >
                   <Videocard item={{ item }} />
                 </div>
