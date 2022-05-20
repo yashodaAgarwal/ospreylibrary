@@ -36,7 +36,7 @@ function Explorepage() {
   }, [videoDispatch]);
 
   return (
-    <div>
+    <div> 
       <Navbar />
       <div className="home-container">
         <Sidebar />
