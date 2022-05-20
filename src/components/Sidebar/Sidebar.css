@@ -1,5 +1,5 @@
 .Sidebar-container {
-  background-color: #000000;
+  background-color:var(--COLOR-Black) ;
   position: fixed;
   width: 220px;
   height: 100vh;
@@ -9,7 +9,7 @@
   padding: 16px 20px;
   font: 16px Roboto;
   text-decoration: none;
-  color: white;
+  color: var(--COLOR-White);
   display: flex;
   align-items: center;
   flex-direction: row;

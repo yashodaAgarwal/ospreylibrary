@@ -14,3 +14,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+:Root{
+  --COLOR-Black :#000000;
+  --COLOR-White : white;
+  --COLOR-Gray: gray;
+  
+}

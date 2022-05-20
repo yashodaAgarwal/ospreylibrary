@@ -19,13 +19,13 @@
   margin: 8px;
   height: 21rem;
   border-radius: 4px;
-  background-color: WHITE;
-  box-shadow: 0 0 4px grey;
+  background-color: var(--COLOR-White);
+  box-shadow: 0 0 4px var(--COLOR-Gray);
 }
 
 .video-card.dark {
-  background-color: black;
-  color: white;
+  background-color: var(--COLOR-Black);
+  color: var(--COLOR-White);
 }
 
 .video-details {

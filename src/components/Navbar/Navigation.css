@@ -1,11 +1,11 @@
 .nav{
     display: flex;
-    background-color: #000000;
+    background-color:var(--COLOR-Black);
     justify-content: space-between;
     align-items: center;
     position: fixed;
     width:100%;
-    box-shadow: 0 0 5px 1px gray;
+    box-shadow: 0 0 5px 1px var(--COLOR-Gray);
 }
 .logo{
     display: flex;
@@ -15,7 +15,7 @@
 .logo-text{
     padding-left: 5px;
     font:28px 'Roboto';
-    color: white;
+    color: var(--COLOR-White);
 }
 .auth{
     display: flex;
@@ -30,5 +30,5 @@
 }
 .theme-icon{
     font-size:24px;
-    color:white;
+    color:var(--COLOR-White);
 }
