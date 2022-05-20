@@ -9,7 +9,7 @@ import {
   Removetowatchlater,
 } from "../../utils/WatchLaterHelper";
 import { Link } from "react-router-dom";
-import { AddtoHistory, RemoveFromHistory } from "../../utils/HistoryHelper";
+import {  RemoveFromHistory } from "../../utils/HistoryHelper";
 import "./HistoryPage.css";
 
 function HistoryPage() {
