@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Sidebar } from "../../components";
+import { useTheme } from "../../context";
 import { useAuth } from "../../context/AuthContext";
 import "../LoginPage/Loginpage.css";
 import "./Signuppage.css"
 
 
 export default function Signup() {
+  const {theme} = useTheme()
   const { handleSignupData } = useAuth();
   const [isError, setIsError] = useState("");
   const [message, showMessage] = useState("");
@@ -43,7 +45,9 @@ export default function Signup() {
   return (
     <div>
         <Navbar />
-      <Sidebar />
+        <div className="home-container">
+        <Sidebar />
+        <div className={theme === "light" ? "HomePage" : "HomePage dark"}></div>
       <div className="center">
         <div className="Signin-container login-container">
           <div className="login-heading">Sign Up</div>
@@ -124,6 +128,8 @@ export default function Signup() {
           </form>
         </div>
       </div>
-    </div>
+      </div>
+      </div>
+
   );
 }

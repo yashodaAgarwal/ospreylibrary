@@ -2,10 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Sidebar } from "../../components";
+import { useTheme } from "../../context";
 import { useAuth } from "../../context/AuthContext";
 import "./Loginpage.css";
 
 const Loginpage = () => {
+  const {theme} = useTheme()
     const { handleLoginData } = useAuth();
     const [isError,setIsError]= useState("")
     const [login, setLogin] = useState({
@@ -33,7 +35,9 @@ const Loginpage = () => {
   return (
     <div>
       <Navbar />
-      <Sidebar />
+      <div className="home-container">
+        <Sidebar />
+        <div className={theme === "light" ? "HomePage" : "HomePage dark"}>
       <div className="login-container">
         <div className="login-heading">Login</div>
         {isError && (
@@ -56,9 +60,9 @@ const Loginpage = () => {
             <input type="password" onChange={handleChange("password")} value={password} placeholder="***********" required />
           </div>
           <div>
-            <button class="btn login-btn">Login</button>
+            <button className="btn login-btn ">Login</button>
           </div>
-          <button class="btn login-btn" onClick={() => {
+          <button className= "btn login-btn" onClick={() => {
                 handleLoginData(test.email, test.password);
               }}>Login with test credential</button>
           <div class="create-new-account">
@@ -66,6 +70,7 @@ const Loginpage = () => {
           </div>
         </form>
       </div>
+      </div></div>
     </div>
   );
 };

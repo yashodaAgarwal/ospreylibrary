@@ -9,9 +9,11 @@
   box-shadow: 1px 1px 0.625rem black;
   font-weight: 600;
   text-align: center;
+  background-color: white;
 }
 .login-heading {
   font-size: 2.2rem;
+  color:var(--COLOR-Black)
 }
 .data {
   height: 2.8rem;
@@ -26,6 +28,7 @@ form .data input {
 .create-new-account {
   text-align: center;
   padding: 1.25rem;
+  color:var(--COLOR-Black)
 }
 .create-new-account a{
   text-decoration: none;
@@ -39,19 +42,22 @@ input {
   float: left;
   color: black;
 } 
+/* .dark{
+  background:var(--COLOR-Black);
+  color:var(--COLOR-White)
+} */
 .login-btn {
+  background:var(--COLOR-Black);
+  color:var(--COLOR-White);
   width: 100%;
-  background-color: #40587c;
   padding: 0.625rem;
   margin-top: 1.25rem;
   cursor: pointer;
-  border: 2px solid #40587c;
   font-weight: 600;
-  font-size: 16px;
-  color:white       
+  font-size: 16px; 
 }
 .login-btn:hover{
     background-color: white;
-    color:#40587c;
+    color:var(--COLOR-Black);
     font-weight: 600;
 }
