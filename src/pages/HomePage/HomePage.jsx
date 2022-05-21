@@ -13,7 +13,7 @@ const Homepage = () => {
       <div className={theme === "light" ? "HomePage" : "HomePage dark"}>
       <div className="Home-image" >
         <div >
-        <h1 className="cover-page-a">Welcome to YasTube. </h1>
+        <h1 className="cover-page-a">Welcome to Osprey. </h1>
         <p className="cover-page-b">A Video Library to explore videos from various category.</p>
         <Link to="/videos" onClick={() => FilterDispatch({ type: "Clear_Filter" })}><button className={theme === "light" ? "cover-page-button dark" : "cover-page-button "} >Explore</button></Link>
         </div>
