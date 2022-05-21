@@ -11,10 +11,10 @@ export default function Signup() {
   const [isError, setIsError] = useState("");
   const [message, showMessage] = useState("");
   const [User, setUser] = useState({
-    email: "yasho.agarwal219@gmail.com",
-    password: "123456789",
-    firstName: "yshua",
-    lastName: "agarwal",
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
   });
   const { firstName, lastName, email, password } = User;
 

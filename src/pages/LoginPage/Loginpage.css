@@ -27,6 +27,10 @@ form .data input {
   text-align: center;
   padding: 1.25rem;
 }
+.create-new-account a{
+  text-decoration: none;
+  color:var(--COLOR-Black)
+}
 input {
   border: 1px solid lightgray;
   margin-top: 5px;

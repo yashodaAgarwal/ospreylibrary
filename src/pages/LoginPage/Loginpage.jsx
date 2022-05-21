@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Navbar, Sidebar } from "../../components";
 import { useAuth } from "../../context/AuthContext";
 import "./Loginpage.css";
@@ -61,7 +62,7 @@ const Loginpage = () => {
                 handleLoginData(test.email, test.password);
               }}>Login with test credential</button>
           <div class="create-new-account">
-            Need a account? SignUp
+            Need a account? <Link to="/signup">SignUp</Link>
           </div>
         </form>
       </div>
