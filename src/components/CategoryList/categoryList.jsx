@@ -35,7 +35,7 @@ function CategoryList() {
             to="/videos"
             onClick={() =>
               FilterDispatch({ type: "CATEGORY", payload: item.category })
-            }
+            } key={item._id}
           >
             <div className="itemName" key={item._id}>
               {item.category}

@@ -1,7 +1,10 @@
+import PageNotFound from "./404-page/PageNotFound";
 import Explorepage from "./ExplorePage/Explorepage";
 import HistoryPage from "./HistoryPage/HistoryPage";
 import Homepage from "./HomePage/HomePage";
 import LikePage from "./LikePage/LikePage";
+import Loginpage from "./LoginPage/Loginpage";
+import Signup from "./SignupPage/SignupPage";
 import SingleVideoPage from "./SingeVideoPage/SingleVideoPage";
 import WatchLaterPage from "./WatchLaterPage/watchLaterPage";
 
@@ -10,4 +13,7 @@ WatchLaterPage,
 Explorepage,
 LikePage,
 HistoryPage,
-SingleVideoPage}
+SingleVideoPage,
+PageNotFound,
+Loginpage,
+Signup}

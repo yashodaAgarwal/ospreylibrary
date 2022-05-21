@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Navbar } from "../../components";
 import "./homepage.css";
-import { useFilter, useTheme } from "../../context";
+import { useFilter, useTheme} from "../../context";
 
 const Homepage = () => {
   const { theme } = useTheme();
+
   const { FilterDispatch } = useFilter();
   return (
     <div> 

@@ -3,7 +3,6 @@ import  axios  from "axios";
 export const AddtoHistory = async (video, videoDispatch) => {
   
   try {
-    console.log("jhvgcfc")
     const response = await axios.post(
       "/api/user/history",
       { video },

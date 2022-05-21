@@ -1,0 +1,53 @@
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25.7rem;
+  height: 25rem;
+  padding: 1.875rem;
+  box-shadow: 1px 1px 0.625rem black;
+  font-weight: 600;
+  text-align: center;
+}
+.login-heading {
+  font-size: 2.2rem;
+}
+.data {
+  height: 2.8rem;
+  width: 100%;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+form .data input {
+  height: 100%;
+  width: 100%;
+}
+.create-new-account {
+  text-align: center;
+  padding: 1.25rem;
+}
+input {
+  border: 1px solid lightgray;
+  margin-top: 5px;
+}
+.label-class {
+  float: left;
+  color: black;
+} 
+.login-btn {
+  width: 100%;
+  background-color: #40587c;
+  padding: 0.625rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  border: 2px solid #40587c;
+  font-weight: 600;
+  font-size: 16px;
+  color:white       
+}
+.login-btn:hover{
+    background-color: white;
+    color:#40587c;
+    font-weight: 600;
+}

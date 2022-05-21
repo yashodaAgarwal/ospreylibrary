@@ -1,3 +1,4 @@
+import { AuthProvider, useAuth } from "./AuthContext";
 import { ServerProvider, useServer } from "./Categorycontext";
 import { FilterProvider, useFilter } from "./FilterContext";
 import { ThemeProvider, useTheme } from "./ThemeContext";
@@ -12,4 +13,6 @@ export {
   FilterProvider,
   ThemeProvider,
   useTheme,
+  AuthProvider,
+  useAuth
 };
