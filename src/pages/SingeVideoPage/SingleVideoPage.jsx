@@ -1,4 +1,7 @@
 import React from "react";
+import YouTube from "react-youtube";
+import { Navbar } from "../../components";
+import { useTheme, useVideo } from "../../context";
 import { MdPlaylistPlay, MdWatchLater, MdUnpublished } from "react-icons/md";
 import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa";
 import { AddtoLikeList, RemovetoLikeList } from "../../utils/LikeHelper";
@@ -6,51 +9,48 @@ import {
   Addtowatchlater,
   Removetowatchlater,
 } from "../../utils/WatchLaterHelper";
-import { useVideo } from "../../context";
-import { Link } from "react-router-dom";
-import { AddtoHistory } from "../../utils/HistoryHelper";
-import "./Videocard.css";
-function Videocard({ item }) {
+import "./SingleVideoPage.css"
+var getYouTubeID = require('get-youtube-id');
+
+function SingleVideoPage() {
+  const {theme} = useTheme();
   const {
-    videoState: { watchLater, LikeList },
+    videoState: { watchLater, LikeList, currentVideo },
     videoDispatch,
   } = useVideo();
-  const { creatorsLogo, creator, description, views, time, thumbnailImg, _id } =
-    item.item;
-
+  const { creatorsLogo, creator,description, views, _id,videoLink,time } = currentVideo;
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
   return (
     <div>
-      <Link to="/SingleVideo">
-        <img
-          className="thumbnail"
-          src={thumbnailImg}
-          alt={item.title}
-          onClick={() => {
-            videoDispatch({ type: "saveCurrentVideo", payload: item.item });
-            AddtoHistory(item.item, videoDispatch);
-          }}
-        />
-      </Link>
-      <div className="video-details">
+      <Navbar />
+      <div className="home-container">
+        <div className={theme === "light" ? "HomePage home-wrapper" : "HomePage home-wrapper dark"}>
+          <YouTube videoId={getYouTubeID(videoLink)} opts={opts} />
+          <div className="video-details">
         <img src={creatorsLogo} alt={creator} className="creator-dp" />
         <div>
           <h3 className="video-title">{description}</h3>
           <p>{creator}</p>
-          <p>
-            {views} views . {time} ago
-          </p>
+          <p>{views} views . {time} ago</p>
         </div>
         <div>
           <div>
             {LikeList.some((video) => video._id === _id) ? (
               <FaThumbsUp
                 className="options"
-                onClick={() => RemovetoLikeList(item.item, videoDispatch)}
+                onClick={() => RemovetoLikeList(currentVideo, videoDispatch)}
               />
             ) : (
               <FaRegThumbsUp
                 className="options"
-                onClick={() => AddtoLikeList(item.item, videoDispatch)}
+                onClick={() => AddtoLikeList(currentVideo, videoDispatch)}
               />
             )}
           </div>
@@ -60,19 +60,21 @@ function Videocard({ item }) {
             {watchLater.some((video) => video._id === _id) ? (
               <MdUnpublished
                 className="options"
-                onClick={() => Removetowatchlater(item.item, videoDispatch)}
+                onClick={() => Removetowatchlater(currentVideo, videoDispatch)}
               />
             ) : (
               <MdWatchLater
                 className="options"
-                onClick={() => Addtowatchlater(item.item, videoDispatch)}
+                onClick={() => Addtowatchlater(currentVideo, videoDispatch)}
               />
             )}
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Videocard;
+export default SingleVideoPage;

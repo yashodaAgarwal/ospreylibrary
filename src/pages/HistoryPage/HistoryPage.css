@@ -1,0 +1,25 @@
+.historyHeading{
+    display: flex;
+    width: 64rem;
+    justify-content: space-between;
+}
+.ClearButton{
+   font-weight: 600;
+   padding-top: 20px;
+   cursor: pointer;
+   font-size: 20px;
+}
+.card-with-badge{
+    display: inline;
+    color:var(--COLOR-Black);
+    padding: 0px 2px;
+    position: absolute;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 18rem;
+    font-weight: 800;
+    cursor: pointer;
+    background-color: var(--COLOR-White);
+    border:1px solid var(--COLOR-White);
+    border-radius: 50%;
+}

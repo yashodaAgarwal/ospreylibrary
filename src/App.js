@@ -2,8 +2,10 @@ import {Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Homepage,
   WatchLaterPage,
+  LikePage,
   Explorepage,
-  LikePage} from "./pages";
+  SingleVideoPage,
+  HistoryPage} from "./pages";
 
 
 const  App = () => {
@@ -14,6 +16,8 @@ const  App = () => {
       <Route path="/videos" element={<Explorepage/>}/>
       <Route path="/watchlater" element={<WatchLaterPage/>}/>
       <Route path="/like" element={<LikePage/>}/>
+      <Route path="/SingleVideo" element={<SingleVideoPage/>}/>
+      <Route path="/history" element={<HistoryPage/>}/>
     </Routes>
     </div>
   );
