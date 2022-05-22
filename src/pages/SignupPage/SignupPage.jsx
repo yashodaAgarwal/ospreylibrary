@@ -35,6 +35,7 @@ export default function Signup() {
       if (password.length > 8) {
         handleSignupData(firstName, lastName, email, password);
         showMessage("Account register successfully!!");
+        setIsError("")
       } else {
         setIsError("password should be greater than 6 character");
       }

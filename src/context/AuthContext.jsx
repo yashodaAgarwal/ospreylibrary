@@ -17,12 +17,13 @@ const AuthProvider = ({ children }) => {
     const getValues = { firstname,lastname,email, password};
     try {
       const response = await axios.post(`/api/auth/signup`,getValues);
-      console.log(response)
+      console.log(response.status)
       if (response.status === 200 || response.status === 201) {
         localStorage.setItem("token", response.data.encodedToken);
         navigate("/login")
       }
     } catch (error) {
+      console.log(error)
       if (error.response.status === 422) {
         <div class="alert-items alert-success ">
               <i class="fas fa-exclamation-triangle alert-icon"></i>Already registered, Please <Link to="/login">Login</Link>
@@ -34,14 +35,16 @@ const AuthProvider = ({ children }) => {
     const getLoginValues = { email, password };
     try {
       const res = await axios.post("/api/auth/login", getLoginValues );
+      console.log(res)
       if (res.status === 200 || res.status === 201) {
         setIsLogin(true);
         localStorage.setItem("token", res.data.encodedToken);
         frm ?navigate(frm):navigate("/");
-        localStorage.setItem("user", res.data.foundUser.firstName);
+        localStorage.setItem("user", res.data.user);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error)
+     
     }
   };
 
