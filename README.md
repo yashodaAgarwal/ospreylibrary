@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img  src="https://i.ibb.co/VjfYvFn/Percipio.png" alt="Percipio" border="0"/>  Percipio
+  <img  src="https://i.ibb.co/VjfYvFn/Percipio.png" alt="Percipio" border="0"/>  Osprey
 </h1>
 <div align="center">
   <p>A video library that helps you enhance your wellness and productivity.</p>
@@ -45,7 +45,7 @@ The user can login as Test User to check the flow of the app. The test credentia
 Open your terminal and copy the below code and hit enter.
 
 ```
-git clone https://github.com/SinchanaMS/react-video-library.git
+git clone https://github.com/yashodaAgarwal/ospreylibrary.git
 ```
 
 
