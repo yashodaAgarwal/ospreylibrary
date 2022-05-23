@@ -33,13 +33,13 @@ function HistoryPage() {
               return (
                 <div
                   className={
-                    theme === "light" ? "video-card" : "video-card dark"
+                    theme === "light" ? "video-card History-Card" : "video-card dark"
                   }
                   key={item.id}
                 >
                   <Videocard className="video-card" item={{ item }} />
                   <AiFillCloseCircle
-                    className="delete-video"
+                   className="delete-video"
                     onClick={() => RemoveFromHistory(item, videoDispatch)}
                   />
                 </div>

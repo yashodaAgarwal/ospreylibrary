@@ -23,3 +23,12 @@
     border:1px solid var(--COLOR-White);
     border-radius: 50%;
 }
+.delete-video {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.2rem;
+    font-size: 1.875rem;
+  }
+  .History-Card{
+      position: relative;
+  }
