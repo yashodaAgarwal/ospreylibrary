@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img  src="https://i.ibb.co/VjfYvFn/Percipio.png" alt="Percipio" border="0"/>  Osprey
+   Osprey
 </h1>
 <div align="center">
   <p>A video library that helps you enhance your wellness and productivity.</p>
-  <p>Check the app here: <a href="https://percipio.vercel.app/" target="_blank"> Percipio </a></p>
+  <p>Check the app here: <a href="https://ospreylibrary.netlify.app/" target="_blank"> Osprey </a></p>
  </div>
 
 <h2>Test Credentials</h2>
@@ -19,8 +19,6 @@ The user can login as Test User to check the flow of the app. The test credentia
   <li>Like/Dislike</li>
   <li>Watch Later</li>
   <li>Playlist Management</li>
-  <li>Search Videos</li>
-  <li>Sort by Latest Videos</li>
   <li>Category Filters</li>
   <li> Authentication
     <ul>
@@ -34,10 +32,9 @@ The user can login as Test User to check the flow of the app. The test credentia
 <h2>Tech Stack</h2>
 <ul>
   <li>HTML5, CSS3, JavaScript, ReactJS</li>
-  <li>For styling, Percipio uses my own CSS Component Library - <a href="https://github.com/SinchanaMS/Clay" target="_blank">Clay</a></li>
   <li>React Router</li>
   <li>JWT for authentication</li>
-  <li>Vercel for hosting the website</li>
+  <li>Netlify for hosting the website</li>
 </ul>
 
 ## How to Run the Project Locally
