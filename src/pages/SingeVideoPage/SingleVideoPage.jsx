@@ -25,7 +25,7 @@ function SingleVideoPage() {
     width: "640",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
+      autoplay: 1, 
     },
   };
   return (
@@ -36,6 +36,7 @@ function SingleVideoPage() {
           <YouTube videoId={getYouTubeID(videoLink)} opts={opts} />
           <div className="video-details">
         <img src={creatorsLogo} alt={creator} className="creator-dp" />
+        <div className="SingleVideo">
         <div>
           <h3 className="video-title">{description}</h3>
           <p>{creator}</p>
@@ -79,6 +80,7 @@ function SingleVideoPage() {
               />
             )}
           </div>
+        </div>
         </div>
       </div>
         </div>
