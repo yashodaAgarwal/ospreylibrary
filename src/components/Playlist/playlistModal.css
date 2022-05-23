@@ -9,8 +9,6 @@
     border-radius: 1rem;
     background-color: var(--LIGHT-NAV-BG);
     outline: 2px solid var(--MODAL-OUTLINE-LIGHT);
-
-    
   }
   
   .playlist-modal.dark {
@@ -21,7 +19,6 @@
   .playlist-modal.dark .modal-bg {
     background-color: var(--MODAL-BG-DARK);
   }
-  
   
   .modal {
     display: flex;

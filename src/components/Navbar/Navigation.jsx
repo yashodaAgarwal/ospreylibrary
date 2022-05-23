@@ -15,16 +15,16 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="auth">
-        <Link to="/signup"><button className="auth-btn">SignUp</button></Link>
+        <Link to="/signup"><button className="auth-btn">Signup</button></Link>
         <Link to="/login">{isLogin ? (
             <button
               className="auth-btn"
               onClick={() => setIsLogin((isLogin) => !isLogin)}
             >
-              logout
+              Logout
             </button>
           ) : (
-            <button className="auth-btn">login</button>
+            <button className="auth-btn">Login</button>
           )}</Link>
         {theme === "dark" ? (
           <MdWbSunny onClick={() => setTheme("light")} className="theme-icon" />

@@ -14,7 +14,7 @@ export const createPlaylist = async (
       },
       {
         headers: {
-          authorization: userToken,
+          authorization: localStorage.getItem("token"),
         },
       }
     );
