@@ -12,6 +12,13 @@
     align-items: center;
     padding-left: 40px;
 }
+.logo-image{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px var(--COLOR-White);
+    margin-right: 10px;
+}
 .logo-text{
     padding-left: 5px;
     font:28px 'Roboto';

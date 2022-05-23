@@ -7,7 +7,7 @@ export const AddtoLikeList = async (video, videoDispatch) => {
       { video },
       {
         headers: {
-          authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YmM4MzRhYS1kYzJhLTRiMjUtOWU3Ny00Y2RlMWJmNWNiZWIiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.jNVFef-QeoOawgYBqFjADppRxHPAOpWV_-WuzLQA0bs",
+          authorization: localStorage.getItem("token"),
         },
       }
     );
@@ -29,7 +29,7 @@ export const RemovetoLikeList = async (video, videoDispatch) => {
         `/api/user/likes/${video._id}`,
         {
           headers: {
-            authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YmM4MzRhYS1kYzJhLTRiMjUtOWU3Ny00Y2RlMWJmNWNiZWIiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.jNVFef-QeoOawgYBqFjADppRxHPAOpWV_-WuzLQA0bs",
+            authorization: localStorage.getItem("token"),
           },
         }
       );

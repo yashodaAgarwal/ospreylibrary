@@ -7,7 +7,7 @@ export const Addtowatchlater = async (video, videoDispatch) => {
       { video },
       {
         headers: {
-        authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YmM4MzRhYS1kYzJhLTRiMjUtOWU3Ny00Y2RlMWJmNWNiZWIiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.jNVFef-QeoOawgYBqFjADppRxHPAOpWV_-WuzLQA0bs",
+        authorization: localStorage.getItem("token"),
         },
       }
     );
@@ -27,7 +27,7 @@ export const Removetowatchlater = async (video, videoDispatch) => {
     const response = await axios.delete(`/api/user/watchlater/${video._id}`,
     {
       headers: {
-        authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI5YmM4MzRhYS1kYzJhLTRiMjUtOWU3Ny00Y2RlMWJmNWNiZWIiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ.jNVFef-QeoOawgYBqFjADppRxHPAOpWV_-WuzLQA0bs",
+        authorization:localStorage.getItem("token"),
       },
     }
     );

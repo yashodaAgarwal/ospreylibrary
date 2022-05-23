@@ -1,0 +1,18 @@
+.Signin-container {
+    top: 57%;
+    height: 550px;
+  }
+  .alert-items{
+      margin-bottom: 10px;
+  }
+  .alert-success {
+    background-color: #84f1c9;
+    color: #1b7052;
+  }
+  .alert-danger {
+    color: #dc3545;
+    background-color: #fcc5c5;
+  }
+  .alert-icon {
+    padding: 10px ;
+  }
