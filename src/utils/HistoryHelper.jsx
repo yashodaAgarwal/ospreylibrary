@@ -12,7 +12,6 @@ export const AddtoHistory = async (video, videoDispatch) => {
         },
       }
     );
-    console.log(response)
     if (response.status === 201) {
       videoDispatch({
         type: "ADD_TO_History",
@@ -38,6 +37,25 @@ export const RemoveFromHistory = async (video, videoDispatch) => {
         videoDispatch({
           type: "REMOVE_FROM_History",
           payload: video,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  export const ClearHistory = async ( videoDispatch) => {
+    try {
+      const response = await axios.delete(
+        `/api/user/history/all`,
+        {
+          headers: {
+            authorization:localStorage.getItem("token"),
+          },
+        }
+      );
+      if (response.status === 200) {
+        videoDispatch({
+          type: "ClearHistory"
         });
       }
     } catch (error) {

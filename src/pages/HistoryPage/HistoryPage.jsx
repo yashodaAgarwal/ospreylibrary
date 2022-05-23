@@ -2,7 +2,7 @@ import { Navbar, Sidebar, Videocard } from "../../components";
 import { useTheme, useVideo } from "../../context";
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { RemoveFromHistory } from "../../utils/HistoryHelper";
+import { ClearHistory, RemoveFromHistory } from "../../utils/HistoryHelper";
 import "./HistoryPage.css";
 
 function HistoryPage() {
@@ -23,7 +23,8 @@ function HistoryPage() {
             <h1>History</h1>
             <p
               className="ClearButton"
-              onClick={() => videoDispatch({ type: "ClearHistory" })}
+              onClick={()=>ClearHistory(videoDispatch)}
+              // onClick={() => videoDispatch({ type: "ClearHistory" })}
             >
               Clear History
             </p>
