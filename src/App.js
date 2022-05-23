@@ -8,7 +8,9 @@ import { Homepage,
   Loginpage, 
   SingleVideoPage,
   HistoryPage,
-  PageNotFound} from "./pages";
+  PageNotFound,
+  PlaylistPage,
+  Playlist} from "./pages";
 import { RequiresAuth } from "./RequiresAuth";
 
 
@@ -21,6 +23,8 @@ const  App = () => {
       <Route path="/login" element={<Loginpage/>}/>
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/watchlater" element={<RequiresAuth><WatchLaterPage/></RequiresAuth>}/>
+      <Route path="/playlist/:playlistId" element={<RequiresAuth><PlaylistPage/></RequiresAuth>}/>
+      <Route path="/playlist" element={<RequiresAuth><Playlist/></RequiresAuth>}/>
       <Route path="/like" element={<RequiresAuth><LikePage/></RequiresAuth>}/>
       <Route path="/SingleVideo" element={<SingleVideoPage/>}/>
       <Route path="/history" element={<RequiresAuth><HistoryPage/></RequiresAuth>}/>

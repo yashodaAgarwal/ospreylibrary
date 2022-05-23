@@ -1,7 +1,7 @@
 import React from "react";
 import YouTube from "react-youtube";
-import { Navbar } from "../../components";
-import { useTheme, useVideo } from "../../context";
+import { Navbar, PlaylistModal } from "../../components";
+import { usePlaylist, useTheme, useVideo } from "../../context";
 import { MdPlaylistPlay, MdWatchLater, MdUnpublished } from "react-icons/md";
 import { FaThumbsUp, FaRegThumbsUp } from "react-icons/fa";
 import { AddtoLikeList, RemovetoLikeList } from "../../utils/LikeHelper";
@@ -13,6 +13,7 @@ import "./SingleVideoPage.css"
 var getYouTubeID = require('get-youtube-id');
 
 function SingleVideoPage() {
+  const { showPlaylistModal, setShowPlaylistModal } = usePlaylist();
   const {theme} = useTheme();
   const {
     videoState: { watchLater, LikeList, currentVideo },
@@ -55,7 +56,16 @@ function SingleVideoPage() {
             )}
           </div>
 
-          <MdPlaylistPlay className="options" />
+          <MdPlaylistPlay
+                className="options"
+                onClick={() => {
+                  setShowPlaylistModal((prev) => !prev);
+                }}
+              />
+            
+            {showPlaylistModal && (
+              <PlaylistModal video={currentVideo} key={_id} />
+            )}
           <div>
             {watchLater.some((video) => video._id === _id) ? (
               <MdUnpublished

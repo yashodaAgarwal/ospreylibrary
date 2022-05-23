@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import {
   AuthProvider,
   FilterProvider,
+  PlaylistProvider,
   ServerProvider,
   ThemeProvider,
   VideoProvider,
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Router>
       <ThemeProvider>
       <AuthProvider>
+        <PlaylistProvider>
         <VideoProvider>
           <FilterProvider>
             <ServerProvider>
@@ -27,6 +29,7 @@ ReactDOM.render(
             </ServerProvider>
           </FilterProvider>
         </VideoProvider>
+        </PlaylistProvider>
       </AuthProvider>
       </ThemeProvider>
     </Router>

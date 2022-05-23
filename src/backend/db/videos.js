@@ -92,7 +92,7 @@
      category: "Communication",
      views: "55k",
      time: "1 year",
-   },
+   }, 
    {
      _id: uuid(),
      thumbnailImg: "https://img.youtube.com/vi/HAnw168huqA/maxresdefault.jpg",

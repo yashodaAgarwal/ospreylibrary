@@ -18,5 +18,37 @@ code {
   --COLOR-Black :#000000;
   --COLOR-White : white;
   --COLOR-Gray: gray;
-  
+}
+:root {
+  --CARD-LIGHT: #f0eded;
+  --CARD-DARK: #2b2a2a;
+  --DARK-THEME-BG: #202020;
+  --DARK-THEME-TEXT: #e9e6e6;
+  --LIGHT-NAV-BG: #f5f1f1;
+  --CTAS-LIGHT: #3b3939;
+  --CTAS-DARK: #ded6d6;
+  --BRAND-LOGO-BG: #b7caca;
+  --SEARCH-BAR-BG: #f8f8f8;
+  --BG-LIGHT: #e0dbdb;
+  --MODAL-BG-DARK: #53535315;
+  --MODAL-BG-LIGHT: #f5f1f10e;
+  --INPUT-BG: #e6e4e4;
+  --INPUT-FOCUS: #777676;
+  --MODAL-OUTLINE-LIGHT: #c7c6c6;
+  --DIALOG-TEXT: #000000;
+  --DIALOG-HOVER-BG: #cbc8c8;
+  --DELETE-BTN: #8d8888;
+  --CHECK-ICON-BG: #628d62;
+}
+.flex{
+  display: flex;
+}
+.jc-between{
+  justify-content: space-between;
+}
+.jc-center{
+  justify-content: center;
+}
+.ai-center{
+  align-items: center;
 }

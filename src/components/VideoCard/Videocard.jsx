@@ -6,10 +6,12 @@ import {
   Addtowatchlater,
   Removetowatchlater,
 } from "../../utils/WatchLaterHelper";
-import { useVideo } from "../../context";
+import { usePlaylist, useVideo } from "../../context";
 import { Link } from "react-router-dom";
 import { AddtoHistory } from "../../utils/HistoryHelper";
 import "./Videocard.css";
+import PlaylistModal from "../Playlist/PlaylistModal";
+
 function Videocard({ item }) {
   const {
     videoState: { watchLater, LikeList },
@@ -17,7 +19,7 @@ function Videocard({ item }) {
   } = useVideo();
   const { creatorsLogo, creator, description, views, time, thumbnailImg, _id } =
     item.item;
-
+    const { showPlaylistModal, setShowPlaylistModal } = usePlaylist();
   return (
     <div>
       <Link to="/SingleVideo">
@@ -55,7 +57,17 @@ function Videocard({ item }) {
             )}
           </div>
 
-          <MdPlaylistPlay className="options" />
+          <MdPlaylistPlay
+                className="options"
+                onClick={() => {
+                  setShowPlaylistModal((prev) => !prev);
+                }}
+              />
+            
+            {showPlaylistModal && (
+              <PlaylistModal video={item.item} key={_id} />
+            )}
+         
           <div>
             {watchLater.some((video) => video._id === _id) ? (
               <MdUnpublished

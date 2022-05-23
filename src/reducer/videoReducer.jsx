@@ -33,6 +33,17 @@ const videoReducer = (state, action) => {
       return { ...state, currentVideo: action.payload };
     case "ClearHistory":
       return{ ...state, History:[]}
+      case "CREATE_PLAYLIST":
+    case "DELETE_PLAYLIST":
+      return { ...state, playlists: action.payload };
+
+    case "ADD_TO_PLAYLIST":
+    case "DELETE_FROM_PLAYLIST": {
+      const updatedPlaylist = state.playlists.map((item) =>
+        item._id === action.payload._id ? action.payload : item
+      );
+      return { ...state, playlists: updatedPlaylist };
+    }
     default:
       return state;
   }

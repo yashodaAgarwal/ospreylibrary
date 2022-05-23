@@ -42,10 +42,7 @@ input {
   float: left;
   color: black;
 } 
-/* .dark{
-  background:var(--COLOR-Black);
-  color:var(--COLOR-White)
-} */
+
 .login-btn {
   background:var(--COLOR-Black);
   color:var(--COLOR-White);

@@ -7,7 +7,7 @@ function WatchLaterPage() {
     videoState: { watchLater },
   } = useVideo();
   return (
-    <div>
+    <div> 
       <Navbar />
       <div className="home-container">
         <Sidebar />
