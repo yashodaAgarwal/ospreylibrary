@@ -20,6 +20,12 @@ const videoReducer = (state, action) => {
           (video) => video.id !== action.payload.id
         ),
       };
+    case "saveHistory":
+      return { ...state, History: action.payload };
+    case "saveLike":
+      return { ...state, LikeList: action.payload };
+    case "saveWatchLater":
+        return { ...state, watchLater: action.payload };
     case "ADD_TO_History":
       return { ...state, History: action.payload };
     case "REMOVE_FROM_History":

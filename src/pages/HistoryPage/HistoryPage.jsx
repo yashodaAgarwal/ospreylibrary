@@ -1,6 +1,7 @@
 import { Navbar, Sidebar, Videocard } from "../../components";
 import { useTheme, useVideo } from "../../context";
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { ClearHistory, RemoveFromHistory } from "../../utils/HistoryHelper";
 import "./HistoryPage.css";
@@ -11,6 +12,16 @@ function HistoryPage() {
     videoState: { History },
     videoDispatch,
   } = useVideo();
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get("/api/user/history");
+        videoDispatch({ type: "saveHistory", payload: response.data.history });
+      } catch (error) {
+        console.log(error, "Could not load data");
+      }
+    })();
+  }, [videoDispatch]);
   return (
     <div>
       <Navbar />
