@@ -1,12 +1,23 @@
-
+import React, { useEffect } from "react";
+import axios from "axios";
 import { Navbar, Sidebar, Videocard } from "../../components";
 import {  useTheme, useVideo } from "../../context";
 
 function LikePage() {
-  const {theme} = useTheme();
+  const {theme} = useTheme(); 
   const {
-    videoState: { LikeList },
+    videoState: { LikeList },videoDispatch
   } = useVideo();
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get("/api/user/likes");
+        videoDispatch({ type: "saveLike", payload: response.data.likes });
+      } catch (error) {
+        console.log(error, "Could not load data");
+      }
+    })();
+  }, [videoDispatch]);
   return (
     <div>
       <Navbar />

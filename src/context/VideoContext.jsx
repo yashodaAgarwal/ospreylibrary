@@ -10,6 +10,7 @@ const VideoProvider = ({ children }) => {
     LikeList: [],
     currentVideo: null,
     History: [],
+    playlists:[]
   });
 
   return (

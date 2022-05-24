@@ -65,7 +65,7 @@ const Loginpage = () => {
           <button className= "btn login-btn" onClick={() => {
                 handleLoginData(test.email, test.password);
               }}>Login with test credential</button>
-          <div class="create-new-account">
+          <div className="create-new-account">
             Need a account? <Link to="/signup">SignUp</Link>
           </div>
         </form>

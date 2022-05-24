@@ -1,13 +1,25 @@
 import { Navbar, Sidebar, Videocard } from "../../components";
 import { useTheme, useVideo } from "../../context";
+import React, { useEffect } from "react";
+import axios from "axios";
 
 function WatchLaterPage() {
   const {theme} = useTheme();
   const {
-    videoState: { watchLater },
+    videoState: { watchLater },videoDispatch
   } = useVideo();
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get("/api/user/watchlater");
+        videoDispatch({ type: "saveWatchLater", payload: response.data.watchlater });
+      } catch (error) {
+        console.log(error, "Could not load data");
+      }
+    })();
+  }, [videoDispatch]);
   return (
-    <div>
+    <div> 
       <Navbar />
       <div className="home-container">
         <Sidebar />

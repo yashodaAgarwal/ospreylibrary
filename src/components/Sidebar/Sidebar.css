@@ -4,6 +4,7 @@
   width: 220px;
   height: 100vh;
   margin-top: 1px;
+  box-shadow: 0 0 5px 1px var(--COLOR-Gray);
 }
 .sidebar-links {
   padding: 16px 20px;

@@ -26,7 +26,7 @@ const Sidebar = ()=> {
       <Link className="sidebar-links" to="/history">
         <MdHistory className="sidebar-icons" /> History
       </Link>
-      <Link className="sidebar-links" to="/">
+      <Link className="sidebar-links" to="/playlist">
         <MdPlaylistPlay className="sidebar-icons" /> Playlist
       </Link>
       <Link className="sidebar-links" to="/like">

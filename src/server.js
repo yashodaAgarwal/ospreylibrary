@@ -83,7 +83,7 @@ export function makeServer({ environment = "development" } = {}) {
       this.get("/videos", getAllVideosHandler.bind(this));
       this.get("video/:videoId", getVideoHandler.bind(this));
 
-      // TODO: POST VIDEO TO DB
+      // TODO: POST VIDEO TO DB 
 
       // categories routes (public)
       this.get("/categories", getAllCategoriesHandler.bind(this));
