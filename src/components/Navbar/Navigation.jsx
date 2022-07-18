@@ -15,7 +15,8 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="auth">
-        <Link to="/signup"><button className="auth-btn">Signup</button></Link>
+        {isLogin?(<></>):(<Link to="/signup"><button className="auth-btn">Signup</button></Link>)}
+        
         <Link to="/login">{isLogin ? (
             <button
               className="auth-btn"

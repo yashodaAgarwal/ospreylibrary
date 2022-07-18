@@ -18,8 +18,8 @@ const Loginpage = () => {
         setLogin({ ...login, error: false, [name]: event.target.value });
       };
       const test = {
-        email: "adarshbalika@gmail.com",
-        password: "adarshBalika123",
+        email: "yashodaagarwal@gmail.com",
+        password: "123456789",
       };
       const loginHandler = (e) => {
         const { email, password } = login;

@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
       if (res.status === 200 || res.status === 201) {
         setIsLogin(true);
         localStorage.setItem("token", res.data.encodedToken);
-        frm ?navigate(frm):navigate("/");
+        frm ?navigate(frm):navigate("/videos");
         localStorage.setItem("user", res.data.user);
       }
     } catch (error) {
