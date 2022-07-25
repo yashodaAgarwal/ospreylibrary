@@ -35,7 +35,6 @@ function HistoryPage() {
             <p
               className="ClearButton"
               onClick={()=>ClearHistory(videoDispatch)}
-              // onClick={() => videoDispatch({ type: "ClearHistory" })}
             >
               Clear History
             </p>
@@ -45,7 +44,7 @@ function HistoryPage() {
               return (
                 <div
                   className={
-                    theme === "light" ? "video-card History-Card" : "video-card dark"
+                    theme === "light" ? "video-card History-Card" : "video-card History-Card dark"
                   }
                   key={item.id}
                 >
